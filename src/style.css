@@ -1,6 +1,23 @@
 .background{
-    background-image: url("https://i.pinimg.com/originals/75/0e/05/750e05d9867e02ce0ba641e1e2030bc5.jpg");
+    background-image: url("https://www.smavicon.de/wp-content/uploads/2018/09/Fotolia_108963484_XL-STEIN-Hintergrund.jpg");
     background-position: "center";
     background-attachment: fixed;
     background-size: cover;
+    width: 600px;
+    margin: 0 auto;
+}
+
+.title{
+    font-family: 'Unlock', cursive;
+    color: white;
+    font-size: 700%;
+}
+
+.startButton{
+    margin-top:40%;
+    margin-left:30%;
+}
+.gif{
+    width: 100%;
+    height: 100%;
 }
