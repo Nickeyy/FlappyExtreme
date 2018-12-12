@@ -1,4 +1,4 @@
-    function Bird(){
+function Bird(){
     this.y = height/2;
     this.x = 64;
 
@@ -10,9 +10,6 @@
 
         fill(255);
         ellipse(this.x, this.y, 32, 32);
-        //var bat = new Image();
-        //bat.src='../../res/bird/frame-6.png';
-        //Image.bat(this.x,this.y,20,20);
     }
 
     this.up = function(){
@@ -25,6 +22,7 @@
         this.y += this.velocity;
 
         if(this.y > height){
+            window.location.replace("../view/gameover.view.html");
             this.y = height;
             this.velocity = 0;
         }

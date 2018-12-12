@@ -1,14 +1,30 @@
 var pipes = [];
 var bird;
+var bg;
+var bat;
+var y=0;
 
-function setup(){
-    createCanvas(600, 800);
-    bird = new Bird();
-    pipes.push(new Pipe());
+function preload() {
+
 }
 
+function setup(){
+
+    bird = new Bird();
+    pipes.push(new Pipe());
+   
+   // bat = loadImage("../../res/bird/main.png");
+    //bg = loadImage("../../res/backGroundGame.jpg");
+   
+
+   
+
 function draw(){
-    background(0);
+  
+    //alert('3');
+    createCanvas(700, 920);
+  
+   //background(bg);
 
     for(var i = pipes.length-1; i >= 0; i--){
         pipes[i].show();
@@ -22,8 +38,6 @@ function draw(){
             pipes.splice(i, 1);
         }
     }
-
-
     bird.update();
     bird.show();
 

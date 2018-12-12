@@ -21,8 +21,12 @@
     width: 100%;
     height: 100%;
 }
+.testbg {
+    background-image: url("http://i.imgur.com/v1mR98F.jpg");
+
+}
 .backgroundgame{
-    background-image: url("http://hintergrundbild.org/wallpaper/full/0/b/d/65125-galaxie-hintergrundbilder-1920x1080-fuer-samsung-note.jpg");
+    background-image: url("http://i.imgur.com/v1mR98F.jpg");
     background-position: "center";
     background-attachment: fixed;
     background-size: cover;
@@ -47,5 +51,9 @@
 
 .homeButton{
     margin-top: 120%;
+    margin-left: 40%;
+}
+
+.retryButton{
     margin-left: 40%;
 }
