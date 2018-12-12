@@ -12,7 +12,7 @@
         ellipse(this.x, this.y, 32, 32);
         //var bat = new Image();
         //bat.src='../../res/bird/frame-6.png';
-        //Image(bat,this.x,this.y,20,20);
+        //Image.bat(this.x,this.y,20,20);
     }
 
     this.up = function(){
