@@ -1,7 +1,10 @@
-//export default 
     function Bird(){
-    this.y = -100;
-    this.x = 25;
+    this.y = height/2;
+    this.x = 64;
+
+    this.gravity = 0.6;
+    this.liftup = 19;
+    this.velocity =0;
 
     this.show = function(){
 
@@ -10,5 +13,24 @@
         //var bat = new Image();
         //bat.src='../../res/bird/frame-6.png';
         //Image(bat,this.x,this.y,20,20);
+    }
+
+    this.up = function(){
+        this.velocity -= this.liftup;
+    }
+
+    this.update = function(){
+        this.velocity += this.gravity;
+        this.velocity *= 0.9;
+        this.y += this.velocity;
+
+        if(this.y > height){
+            this.y = height;
+            this.velocity = 0;
+        }
+        if(this.y < 0){
+            this.y = 0;
+            this.velocity = 0;
+        }
     }
 }
