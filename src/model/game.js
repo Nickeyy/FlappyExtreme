@@ -17,7 +17,7 @@ function setup(){
     //bg = loadImage("../../res/backGroundGame.jpg");
    
 
-   
+}   
 
 function draw(){
   

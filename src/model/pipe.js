@@ -2,7 +2,7 @@ function Pipe(){
 this.top = random(height/2);
 this.bottom = random(height/2)
 this.x= width;
-this.w = 20;
+this.w = 40;
 this.speed = 4;
 
 this.highlight=false;
@@ -19,7 +19,7 @@ this.hits =function(bird){
 }
 
 this.show = function(){
-    fill(255);
+    fill(0,0,255);
     if(this.highlight){
         window.location.replace("../view/gameover.view.html");
     }
