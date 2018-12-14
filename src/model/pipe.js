@@ -1,7 +1,6 @@
 function Pipe(){
     
 this.gap = random(100,150);
-//this.spacing = 125;
 this.top = random(355,430-(20,170));
 this.bottom = random(355,430+(20,100));
 
