@@ -1,30 +1,43 @@
 function Pipe(){
-this.top = random(height/2);
-this.bottom = random(height/2)
+    
+this.gap = random(100,150);
+//this.spacing = 125;
+this.top = random(355,430-(20,170));
+this.bottom = random(355,430+(20,100));
+
+
 this.x= width;
-this.w = 40;
-this.speed = 4;
+this.w = 55;
+this.speed = 6;
 
 this.highlight=false;
+this.passed = false;
 
 this.hits =function(bird){
     if(bird.y < this.top || bird.y > height - this.bottom){
         if(bird.x > this.x && bird.x < this.x + this.w){
             this.highlight=true;
+            this.passed = true;
             return true;
         }
     }
     this.highlight=false;
     return false;
 }
+this.pass= function(bird){
+    if(bird.x > this.x && !this.passed){
+        this.passed = true;
+        return true;
+    }
+    return false;
+}
 
 this.show = function(){
-    fill(0,0,255);
     if(this.highlight){
         window.location.replace("../view/gameover.view.html");
     }
-    rect(this.x, 0, this.w, this.top);
-    rect(this.x, height-this.bottom, this.w, this.bottom);
+    image(pipePic2,this.x, 0, this.w, this.top);
+    image(pipePic,this.x, height-this.bottom, this.w, this.bottom);
 }
 
 this.update = function(){

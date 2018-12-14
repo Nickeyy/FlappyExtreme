@@ -3,20 +3,32 @@ var bird;
 var bg;
 var bat;
 var bgx=0;
+var parallax = 0.8;
 var canvas; 
+var pipePic;
+var pipePic2;
+var bgMusic;
+var score = 0;
+var maxscore = 0;
 
 
 function preload() {
     bg = loadImage('../../res/backGroundGame.jpg');
     bat = loadImage('../../res/bird/main.png');
+    pipePic = loadImage('../../res/pipe/sharp_wood.png');
+    pipePic2 = loadImage('../../res/pipe/sharp_wood2.png');
+    soundFormats('mp3', 'ogg');
+    bgMusic = loadSound('../../res/bgMusic.mp3'); 
 }
 
 function setup(){
 
     bird = new Bird();
     pipes.push(new Pipe());
-    canvas = createCanvas(520, 923);
-    canvas.class('canvas-bg'); 
+    canvas = createCanvas(700, 920);
+    canvas.class('canvas-bg');
+    bgMusic.setVolume(0.2);
+    bgMusic.play(); 
 
 }   
 
@@ -24,19 +36,6 @@ function draw(){
    
     background(0);
     image(bg,bgx,0,bg.width,height);
-    bgX -= pipes[0].speed * parallax;
-
-    // this handles the "infinite loop" by checking if the right
-    // edge of the image would be on the screen, if it is draw a
-    // second copy of the image right next to it
-    // once the second image gets to the 0 point, we can reset bgX to
-    // 0 and go back to drawing just one image.
-    /*if (bgX <= -bgImg.width + width) {
-      image(bgImg, bgX + bgImg.width, 0, bgImg.width, height);
-      if (bgX <= -bgImg.width) {
-        bgX = 0;
-      }
-    }*/
 
     for(var i = pipes.length-1; i >= 0; i--){
         pipes[i].show();
@@ -44,6 +43,9 @@ function draw(){
 
         if(pipes[i].hits(bird)){
             console.log("HIT");
+        }
+        if(pipes[i].pass(bird)){
+            score++;
         }
 
         if(pipes[i].offscreen()){
@@ -54,8 +56,16 @@ function draw(){
     bird.show();
 
 
-    if (frameCount % 120 ==0){
+    if (frameCount % 140 ==0){
         pipes.push(new Pipe());
+    }
+    showScores();
+
+    function showScores(){
+        textSize(32);
+        fill(255); 
+        text('score: ' + score,1,32);
+        text('record: ' + maxscore,1,64);
     }
 }
 

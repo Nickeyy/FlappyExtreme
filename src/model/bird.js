@@ -1,5 +1,5 @@
 function Bird(){
-    this.y = height/2;
+    this.y = 420;
     this.x = 64;
 
     this.gravity = 0.6;
@@ -8,8 +8,7 @@ function Bird(){
 
     this.show = function(){
 
-        fill(255,105,180);
-        ellipse(this.x, this.y, 32, 32);
+        image(bat,this.x, this.y, 50, 50);
     }
 
     this.up = function(){
