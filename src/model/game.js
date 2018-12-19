@@ -14,6 +14,8 @@ let timer =5;
 var start = true;
 var parallax = 0.9;
 var bg2;
+var coin = [];
+var coinimg;
 
 
 function preload() {
@@ -21,6 +23,7 @@ function preload() {
     bat = loadImage('../../res/bird/main.png');
     pipePic = loadImage('../../res/pipe/sharp_wood.png');
     pipePic2 = loadImage('../../res/pipe/sharp_wood2.png');
+    coinimg = loadImage('../../res/coin.png');
     soundFormats('mp3', 'ogg');
     bgMusic = loadSound('../../res/bgMusic.mp3'); 
 }
@@ -29,6 +32,7 @@ function setup(){
 
     bird = new Bird();
     pipes.push(new Pipe());
+    coin.push(new Coin());
     canvas = createCanvas(700, 940);
     canvas.class('canvas-bg');
     bgMusic.setVolume(0.2);
@@ -77,6 +81,17 @@ function draw(){
         fill(255); 
         text('score: ' + score,0,32);
         text('record: ' + maxscore,0,64);
+    }
+    for(var i = coin.length-1; i >= 1; i--){
+        coin[i].show();
+
+        if(coin[i].hits(bird)){
+            score = score + 5;
+        }
+    }
+
+    if(frameCount % 1500 == 0){
+        coin.push(new Coin());
     }
     bird.update();
     bird.show();
