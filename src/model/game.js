@@ -12,13 +12,12 @@ var score = 0;
 var maxscore = 0;
 let timer =5;
 var start = true;
-var parallax = 0.8;
+var parallax = 0.9;
 var bg2;
 
 
 function preload() {
-    bg = loadImage('../../res/backgroundbg.png');
-    bg2 = loadImage('../../res/bg2.jpg');
+    bg = loadImage('../../res/backgroundMain.png');
     bat = loadImage('../../res/bird/main.png');
     pipePic = loadImage('../../res/pipe/sharp_wood.png');
     pipePic2 = loadImage('../../res/pipe/sharp_wood2.png');
@@ -47,7 +46,7 @@ function draw(){
 
     if (bgx <= -bg.width + width) {
         image(bg, bgx + bg.width, 0, bg.width, height);
-        if (bgx <= -bg.width) {
+        if (bgx <= bg.width) {
           bgx = 0;
         }
       }
