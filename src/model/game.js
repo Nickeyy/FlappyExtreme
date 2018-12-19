@@ -89,7 +89,6 @@ function draw(){
 
         if(coin[i].hit(bird)){
             coinscore++;
-            coin[i].hide();
         }
     }
 
