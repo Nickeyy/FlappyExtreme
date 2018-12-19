@@ -16,6 +16,7 @@ var parallax = 0.9;
 var bg2;
 var coin = [];
 var coinimg;
+var coinscore=0;
 
 
 function preload() {
@@ -80,13 +81,15 @@ function draw(){
         textSize(32);
         fill(255); 
         text('score: ' + score,0,32);
-        text('record: ' + maxscore,0,64);
+        text('coins:' + coinscore,0,64);
+        text('record: ' + maxscore,0,96);
     }
     for(var i = coin.length-1; i >= 1; i--){
         coin[i].show();
 
-        if(coin[i].hits(bird)){
-            score = score + 5;
+        if(coin[i].hit(bird)){
+            coinscore++;
+            coin[i].hide();
         }
     }
 
