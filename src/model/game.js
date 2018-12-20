@@ -20,7 +20,7 @@ var coinscore=0;
 var coinsound;
 
 
-function preload() {
+function preload() { //Load Images and Music
     bg = loadImage('../../res/backgroundMain.png');
     bat = loadImage('../../res/bird/main.png');
     pipePic = loadImage('../../res/pipe/sharp_wood.png');
@@ -30,7 +30,7 @@ function preload() {
     bgMusic = loadSound('../../res/bgMusic.mp3');
 }
 
-function setup(){
+function setup(){ // First Function that loads when Game get started
 
     bird = new Bird();
     pipes.push(new Pipe());
@@ -42,7 +42,7 @@ function setup(){
 }   
 
 
-function draw(){
+function draw(){ 
    
     background(0);
     image(bg,bgx,0,bg.width,height);
@@ -73,7 +73,7 @@ function draw(){
     
     }
 
-    if (frameCount % 140 == 0) {
+    if (frameCount % 140 == 0) { //After 140 frames a new pipe spawns
         pipes.push(new Pipe());
       }
     showScores();

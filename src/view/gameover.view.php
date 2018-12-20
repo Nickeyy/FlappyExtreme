@@ -10,10 +10,10 @@
 <body class ="backgroundgameover">
 
     <div>
-        <form class="homeButton" method="post" action="../index.html">
+        <form class="homeButton" method="post" action="../index.php">
             <button class="btn btn-primary" type="sumbit">Home</button>
         </form>
-        <form class="retryButton" mehtod="post" action="game.view.html">
+        <form class="retryButton" mehtod="post" action="game.view.php">
             <button class="btn btn-light" type="submit">Retry</button>
         </form>
     </div>

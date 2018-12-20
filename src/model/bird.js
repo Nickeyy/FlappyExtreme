@@ -21,7 +21,7 @@ function Bird(){
         this.y += this.velocity;
 
         if(this.y > height){
-            window.location.replace("../view/gameover.view.html");
+            window.location.replace("../view/gameover.view.php");
             this.y = height;
             this.velocity = 0;
         }

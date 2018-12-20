@@ -33,7 +33,7 @@ this.pass= function(bird){
 
 this.show = function(){
     if(this.highlight){
-        window.location.replace("../view/gameover.view.html");
+        window.location.replace("../view/gameover.view.php");
     }
     image(pipePic2,this.x, 0, this.w, this.top);
     image(pipePic,this.x, height-this.bottom, this.w, this.bottom);

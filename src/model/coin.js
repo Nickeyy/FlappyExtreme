@@ -7,9 +7,6 @@ function Coin(){
 
     this.show = function(){
         image(coinimg,this.x,this.y,48,48);
-        /*if(this.got_em==true){
-            Coin.class('coin'); //Um den Coin nachher zu vestecken
-        }*/
     }
 
     this.hit = function(bird){
