@@ -28,8 +28,6 @@ function preload() {
     coinimg = loadImage('../../res/coin.png');
     soundFormats('mp3', 'ogg');
     bgMusic = loadSound('../../res/bgMusic.mp3');
-    soundFormats('mp3', 'ogg');
-    //coinsound = loadSound('../../res/coinSound.mp3');
 }
 
 function setup(){
@@ -41,8 +39,6 @@ function setup(){
     canvas.class('canvas-bg');
     bgMusic.setVolume(0.2);
     bgMusic.play(); 
-    //coinsound.setVolume(0.3);
-
 }   
 
 
@@ -93,7 +89,6 @@ function draw(){
 
         if(coin[i].hit(bird)){
             coinscore++;
-            //coinsound.play();
             coin.splice(i,1);
         }
         else if(frameCount % 1550 == 0){
