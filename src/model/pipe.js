@@ -1,6 +1,6 @@
 function Pipe(){
-    
-this.gap = random(100,150);
+
+this.gap = 125;
 this.top = random(355,430-(20,165));
 this.bottom = random(355,430+(20,110));
 
