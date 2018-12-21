@@ -19,7 +19,7 @@
 <div>
     
     <form class="startButton" method="post" action="view/game.view.php">
-        <input type="text" name="username" id="username" maxlength="30" placeholder="username" required>
+        </*input type="text" name="username" id="username" maxlength="30" placeholder="username" required*/>
         <button class="btn btn-primary" type="sumbit">Start</button>
     </form>
 </div>

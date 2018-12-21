@@ -52,7 +52,7 @@ function draw(){
     if (bgx <= -bg.width + width) {
         image(bg, bgx + bg.width, 0, bg.width, height);
         if (bgx <= bg.width) {
-          bgx = 0;
+        bgx = 0;
         }
       }
 
