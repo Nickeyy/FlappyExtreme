@@ -1,12 +1,11 @@
 function Pipe(){
-
 this.gap = 125;
-this.top = random(355,430-(20,165));
-this.bottom = random(355,430+(20,110));
+this.top = random(200,666);
+this.bottom = (height-this.top) -this.gap;
 
 
 this.x= width;
-this.w = 55;
+this.w = 70;
 this.speed = 6;
 
 this.highlight=false;
