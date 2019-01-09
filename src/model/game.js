@@ -7,6 +7,7 @@ var parallax = 0.8;
 var canvas; 
 var pipePic;
 var pipePic2;
+var pipebody;
 var bgMusic;
 var score = 0;
 var maxscore = 0;
@@ -25,6 +26,7 @@ function preload() { //Load Images and Music
     bat = loadImage('../../res/bird/main.png');
     pipePic = loadImage('../../res/pipe/sharp_wood.png');
     pipePic2 = loadImage('../../res/pipe/sharp_wood2.png');
+    pipebody = loadImage('../../res/pipe/wood.png')
     coinimg = loadImage('../../res/coin.png');
     soundFormats('mp3', 'ogg');
     bgMusic = loadSound('../../res/bgMusic.mp3');

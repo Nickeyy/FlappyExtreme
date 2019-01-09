@@ -34,8 +34,9 @@ this.show = function(){
     if(this.highlight){
         window.location.replace("../view/gameover.view.php");
     }
-    image(pipePic2,this.x, 0, this.w, this.top);
-    image(pipePic,this.x, height-this.bottom, this.w, this.bottom);
+    this.drawHalf();
+    /*image(pipePic2,this.x, 0, this.w, this.top);
+    image(pipePic,this.x, height-this.bottom, this.w, this.bottom);*/
 }
 
 this.update = function(){
@@ -47,6 +48,21 @@ this.offscreen = function(){
     }else{
         return false;
     }
+}
+
+this.drawHalf = function(){
+    let howManyNeeded = 0;
+    let peakRatio = pipePic.height / pipePic.width;
+    let bodyRatio = pipebody.height / pipebody.width;
+
+    howManyNeeded = Math.round(height / (this.w * bodyRatio));
+
+    for (let i=0; i < howManyNeeded; i++){
+        let offset = this.top * (i * bodyRatio + peakRatio);
+        image(pipebody, pipePic,this.x, height-this.bottom, this.w, this.bottom);
+    }
+    image(pipePic,this.x, height-this.bottom, this.w, this.bottom);
+    image(pipePic2,this.x, 0, this.w, this.top);
 }
 
 }
