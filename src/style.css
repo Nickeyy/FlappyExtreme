@@ -64,3 +64,23 @@
 .retryButton{
     margin-left: 40%;
 }
+
+.scoreover{
+    font-size: 150%;
+    color: deepskyblue;
+}
+.yourescore{
+    font-size: 150%;
+    color: deepskyblue;
+    margin-top: -10%;
+}
+.coinover{
+    font-size: 150%;
+    color: darkgoldenrod;
+}
+.yourcoin{
+    font-size: 150%;
+    color: darkgoldenrod;
+    margin-top: -17.5%;
+    margin-left:65%;
+}

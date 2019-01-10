@@ -17,6 +17,20 @@
             <button class="btn btn-light" type="submit">Retry</button>
         </form>
     </div>
+    <div class=yourescore>
+        <p>YOUR SCORE:</p>
+        <div class=scoreover id=scoreover>
+        </div>
+    </div>
+    <div class=yourcoin>
+        <p>YOUR COINS:</p>
+        <div id=coinover class=coinover>
+        </div>
+    </div>
+    <script>
+            document.getElementById("scoreover").innerHTML = sessionStorage.getItem("score");
+            document.getElementById("coinover").innerHTML = sessionStorage.getItem("coinscore");
+    </script>
 
 </body>
 

@@ -33,6 +33,7 @@ this.pass= function(bird){
 this.show = function(){
     if(this.highlight){
         window.location.replace("../view/gameover.view.php");
+        this.reset();
     }
     this.drawHalf();
     /*image(pipePic2,this.x, 0, this.w, this.top);
@@ -64,5 +65,4 @@ this.drawHalf = function(){
     image(pipePic,this.x, height-this.bottom, this.w, this.bottom);
     image(pipePic2,this.x, 0, this.w, this.top);
 }
-
 }

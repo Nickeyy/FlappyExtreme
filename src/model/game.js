@@ -18,10 +18,11 @@ var bg2;
 var coin = [];
 var coinimg;
 var coinscore=0;
-var coinsound;
 
 
 function preload() { //Load Images and Music
+    score=0;
+    coinscore=0;
     bg = loadImage('../../res/backgroundMain.png');
     bat = loadImage('../../res/bird/main.png');
     pipePic = loadImage('../../res/pipe/sharp_wood.png');
@@ -33,7 +34,6 @@ function preload() { //Load Images and Music
 }
 
 function setup(){ // First Function that loads when Game get started
-
     bird = new Bird();
     pipes.push(new Pipe());
     coin.push(new Coin());
@@ -41,11 +41,12 @@ function setup(){ // First Function that loads when Game get started
     canvas.class('canvas-bg');
     bgMusic.setVolume(0.2);
     bgMusic.play(); 
+    sessionStorage.clear();
 }   
 
 
 function draw(){ 
-   
+
     background(0);
     image(bg,bgx,0,bg.width,height);
 
@@ -67,6 +68,7 @@ function draw(){
         }
         if(pipes[i].pass(bird)){
             score++;
+            sessionStorage.setItem("score", score);
         }
 
         if(pipes[i].offscreen()){
@@ -84,7 +86,6 @@ function draw(){
         fill(255); 
         text('score: ' + score,0,32);
         text('coins:' + coinscore,0,64);
-        text('record: ' + maxscore,0,96);
     }
     for(var i = coin.length-1; i >= 1; i--){
         coin[i].show();
@@ -92,6 +93,7 @@ function draw(){
         if(coin[i].hit(bird)){
             coinscore++;
             coin.splice(i,1);
+            sessionStorage.setItem("coinscore", coinscore);
         }
         else if(frameCount % 1550 == 0){
             coin.splice(i,1);
@@ -110,3 +112,5 @@ function keyPressed(){
         bird.up();
     }
 }
+
+
